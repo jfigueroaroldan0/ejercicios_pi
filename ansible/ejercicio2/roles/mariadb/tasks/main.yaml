@@ -6,15 +6,15 @@
 
 - name: create database wordpress
   community.mysql.mysql_db:
-    name: "{{ wordpress_bd }}"
+    name: "{{ bd_name }}"
     state: present
 
 - name: create user mysql wordpress
   community.mysql.mysql_user:
-    name: "{{ wordpress_user }}"
+    name: "{{ bd_user }}"
     host: "%"
-    password: "{{ asdasd }}"
-    priv: "{{ wordpress_bd }}.*:ALL,GRANT"
+    password: "{{ bd_pass }}"
+    priv: "{{ bd_user }}.*:ALL,GRANT"
   loop:
     - localhost
 
