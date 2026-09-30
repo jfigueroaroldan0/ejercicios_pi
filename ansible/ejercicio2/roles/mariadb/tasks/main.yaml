@@ -6,15 +6,15 @@
 
 - name: create database wordpress
   community.mysql.mysql_db:
-    name: "{{cambia_nombre_variable}}"
+    name: "{{ wordpress_bd }}"
     state: present
 
 - name: create user mysql wordpress
   community.mysql.mysql_user:
-    name: "{{cambia_nombre_variable}}"
-    host: "{{ item }}"
-    password: "{{cambia_nombre_variable}}"
-    priv: "{{cambia_nombre_variable}}.*:ALL,GRANT"
+    name: "{{ wordpress_user }}"
+    host: "%"
+    password: "{{ asdasd }}"
+    priv: "{{ wordpress_bd }}.*:ALL,GRANT"
   loop:
     - localhost
 
@@ -25,4 +25,4 @@
     line: "bind-address            = 0.0.0.0"
     state: present
   notify:
-    -
+    - restart mariadb
