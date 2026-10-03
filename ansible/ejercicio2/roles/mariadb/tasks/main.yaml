@@ -14,7 +14,7 @@
     name: "{{ bd_user }}"
     host: "%"
     password: "{{ bd_pass }}"
-    priv: "{{ bd_user }}.*:ALL,GRANT"
+    priv: "{{ bd_name }}.*:ALL,GRANT"
   loop:
     - localhost
 
