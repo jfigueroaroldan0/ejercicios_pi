@@ -17,7 +17,7 @@ resource "libvirt_cloudinit_disk" "ej1-server1-cloudinit" {
 # Definición del dominio (máquina virtual)
 resource "libvirt_domain" "ej1-server1" {
   name   = "ej1-server1"
-  memory = 1024
+  memory = 2048
   vcpu   = 2
 
   network_interface {
